@@ -31,26 +31,27 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter Expense App'),
-      ),
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              child: Text('CHART'),
-              elevation: 5,
-            ),
+        appBar: AppBar(
+          title: Text('Flutter Expense App'),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                child: Card(
+                  color: Colors.blue,
+                  child: Text('CHART'),
+                  elevation: 5,
+                ),
+              ),
+              UserTransactions(),
+            ],
           ),
-          UserTransactions(),
-        ],
-      ),
 
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
+          // This trailing comma makes auto-formatting nicer for build methods.
+        ));
   }
 }
