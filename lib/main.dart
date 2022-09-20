@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import './widgets/new_transaction.dart';
+import './widgets/chart.dart';
 
 import 'models/transaction.dart';
 import './widgets/transaction_list.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
                     fontFamily: 'OpenSans',
                     fontSize: 20,
                   ),
+                  titleMedium: TextStyle(fontFamily: 'Quicksand', fontSize: 20),
                 )),
       ),
       home: MyHomePage(),
@@ -40,12 +42,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransaction = [
-    Transaction(
-        id: 't1', title: 'Plat Okok', amount: 500, date: DateTime.now()),
-    Transaction(
-        id: 't2', title: 'Plat Eru', amount: 1000, date: DateTime.now()),
-    Transaction(
-        id: 't3', title: 'Plat Sanga', amount: 2000, date: DateTime.now()),
+    //Transaction(
+    //  id: 't1', title: 'Plat Okok', amount: 500, date: DateTime.now()),
+    //Transaction(
+    //  id: 't2', title: 'Plat Eru', amount: 1000, date: DateTime.now()),
+    //Transaction(
+    //  id: 't3', title: 'Plat Sanga', amount: 2000, date: DateTime.now()),
   ];
 
   void _addNewTransaction(String txTitle, double txAmount) {
@@ -94,14 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              width: double.infinity,
-              child: Card(
-                color: Colors.blue,
-                child: Text('CHART'),
-                elevation: 5,
-              ),
-            ),
+            Chart(),
             TransactionList(_userTransaction),
           ],
         ),
